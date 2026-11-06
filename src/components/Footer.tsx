@@ -23,15 +23,26 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-white/15">
           {/* Brand & Mission (5 Cols) */}
           <div className="lg:col-span-5 space-y-3.5">
-            <div className="flex items-baseline gap-1.5">
-              <span className="text-3xl font-black font-manrope tracking-tighter text-white">
-                PVC
-              </span>
-              <span className="w-2.5 h-2.5 rounded-full bg-brand-sky inline-block mb-1" />
+            <div className="flex items-center gap-3">
+              <div className="w-11 h-11 shrink-0 drop-shadow-md">
+                <img
+                  src="/images/brand/pvc-logo-transparent.png"
+                  alt="PVC Smart Services Emblem Logo"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div>
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-2xl sm:text-3xl font-black font-manrope tracking-tighter text-white">
+                    PVC
+                  </span>
+                  <span className="w-2 h-2 rounded-full bg-brand-sky inline-block mb-1" />
+                </div>
+                <p className="text-[10px] font-mono tracking-wider text-brand-sky uppercase font-bold">
+                  {t.brand.smart} · {t.brand.tagline}
+                </p>
+              </div>
             </div>
-            <p className="text-xs font-mono tracking-wider text-brand-sky uppercase font-bold">
-              {t.brand.smart} · {t.brand.tagline}
-            </p>
             <p className="text-xs sm:text-sm text-brand-sky-pale leading-relaxed max-w-sm pt-1">
               {t.footer.summary}
             </p>
@@ -94,6 +105,14 @@ export const Footer: React.FC = () => {
                   className="hover:text-white transition-colors focus:outline-none"
                 >
                   {t.nav.sectors}
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleNavClick('team')}
+                  className="hover:text-white transition-colors focus:outline-none"
+                >
+                  {t.nav.team}
                 </button>
               </li>
               <li>

@@ -7,6 +7,7 @@ import { ServicesShowcase } from './components/ServicesShowcase';
 import { SmartSystemExplainer } from './components/SmartSystemExplainer';
 import { PrinciplesSection } from './components/PrinciplesSection';
 import { IndustriesSection } from './components/IndustriesSection';
+import { TeamSection } from './components/TeamSection';
 import { ApproachTimeline } from './components/ApproachTimeline';
 import { ProposalCTA } from './components/ProposalCTA';
 import { ContactSection } from './components/ContactSection';
@@ -38,6 +39,7 @@ export const AppContent: React.FC = () => {
         <SmartSystemExplainer />
         <PrinciplesSection />
         <IndustriesSection />
+        <TeamSection />
         <ApproachTimeline />
         <ProposalCTA />
         <ContactSection />

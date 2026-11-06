@@ -21,6 +21,7 @@ interface TranslationContent {
     services: string;
     principles: string;
     sectors: string;
+    team: string;
     approach: string;
     contact: string;
     cta: string;
@@ -187,6 +188,7 @@ const contentData: Record<Language, TranslationContent> = {
       services: 'خدماتنا',
       principles: 'لماذا PVC',
       sectors: 'القطاعات',
+      team: 'فريق العمل',
       approach: 'منهجيتنا',
       contact: 'اتصل بنا',
       cta: 'اطلب عرضًا ↗',
@@ -494,6 +496,7 @@ const contentData: Record<Language, TranslationContent> = {
       services: 'Services',
       principles: 'Why PVC',
       sectors: 'Sectors',
+      team: 'Leadership',
       approach: 'Approach',
       contact: 'Contact',
       cta: 'Request a Proposal ↗',

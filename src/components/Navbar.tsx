@@ -40,6 +40,7 @@ export const Navbar: React.FC = () => {
     { id: 'system-architecture', label: language === 'ar' ? 'كيف يعمل النظام' : 'System Flow' },
     { id: 'principles', label: t.nav.principles },
     { id: 'sectors', label: t.nav.sectors },
+    { id: 'team', label: t.nav.team },
     { id: 'approach', label: t.nav.approach },
     { id: 'contact', label: t.nav.contact }
   ];
@@ -89,27 +90,34 @@ export const Navbar: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            {/* Brand Logo */}
+            {/* Brand Logo with 3D Shield Emblem */}
             <a
               href="#home"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick('home');
               }}
-              className="flex items-center gap-2.5 group focus:outline-none"
+              className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none"
             >
+              <div className="relative w-9 h-9 sm:w-11 sm:h-11 shrink-0 drop-shadow-md group-hover:scale-105 transition-transform">
+                <img
+                  src="/images/brand/pvc-logo-transparent.png"
+                  alt="PVC Smart Services Shield Logo"
+                  className="w-full h-full object-contain"
+                />
+              </div>
               <div className="relative flex flex-col justify-center items-start">
                 <div className="flex items-baseline gap-1">
-                  <span className="text-2xl sm:text-3xl font-black font-manrope tracking-tighter text-white">
+                  <span className="text-xl sm:text-2xl md:text-3xl font-black font-manrope tracking-tighter text-white">
                     PVC
                   </span>
-                  <span className="w-2 h-2 rounded-full bg-brand-sky inline-block mb-1 group-hover:scale-125 transition-transform" />
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-sky inline-block mb-1 group-hover:scale-125 transition-transform" />
                 </div>
                 <div className="flex flex-col -mt-1">
-                  <span className="text-[10px] sm:text-[11px] font-extrabold tracking-[0.2em] text-brand-sky uppercase">
+                  <span className="text-[9px] sm:text-[10px] md:text-[11px] font-extrabold tracking-[0.2em] text-brand-sky uppercase">
                     SMART SERVICES
                   </span>
-                  <span className="text-[7.5px] font-semibold tracking-[0.14em] text-brand-sky-pale uppercase hidden sm:block">
+                  <span className="text-[7px] sm:text-[7.5px] font-semibold tracking-[0.14em] text-brand-sky-pale uppercase hidden sm:block">
                     OPERATIONAL EXCELLENCE · EGYPT
                   </span>
                 </div>
