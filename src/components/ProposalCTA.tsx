@@ -66,7 +66,7 @@ export const ProposalCTA: React.FC = () => {
           >
             <button
               onClick={handleScrollToContact}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-brand-primary hover:bg-white hover:text-brand-navy text-white text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 rounded-sm shadow-xl hover:shadow-brand-primary/40 hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-brand-primary hover:bg-white hover:text-brand-navy text-white text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 rounded-full shadow-xl hover:shadow-brand-primary/40 hover:-translate-y-0.5 active:translate-y-0"
             >
               <span>{t.ctaBanner.cta}</span>
               <ArrowUpRight className={`w-4 h-4 ${isRTL ? 'rotate-180' : ''}`} />

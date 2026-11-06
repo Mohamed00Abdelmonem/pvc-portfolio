@@ -32,14 +32,14 @@ export const PrinciplesSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.12 }}
-              className="group relative p-6 sm:p-8 bg-white border border-brand-light-border border-t-2 border-t-brand-primary/60 rounded-sm hover:border-brand-primary transition-all duration-300 shadow-xs hover:shadow-lg hover:-translate-y-1"
+              className="group relative p-7 sm:p-9 bg-white border border-brand-light-border/80 border-t-2 border-t-brand-primary/60 rounded-3xl hover:border-brand-primary transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1.5"
             >
               {/* Header: Number & Minimal Icon */}
               <div className="flex items-center justify-between mb-6 pb-4 border-b border-brand-light-border">
                 <span className="font-mono text-2xl font-extrabold text-brand-navy">
                   {item.number}
                 </span>
-                <div className="p-2.5 rounded-full bg-brand-light border border-brand-light-border group-hover:bg-brand-primary transition-colors">
+                <div className="p-3 rounded-full bg-brand-light border border-brand-light-border group-hover:bg-brand-primary transition-colors">
                   {icons[index]}
                 </div>
               </div>
@@ -56,7 +56,7 @@ export const PrinciplesSection: React.FC = () => {
               </p>
 
               {/* Sky Blue Bottom Accent Line */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-transparent group-hover:bg-brand-sky transition-colors duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 h-1.5 rounded-b-3xl bg-transparent group-hover:bg-brand-sky transition-colors duration-300" />
             </motion.div>
           ))}
         </div>

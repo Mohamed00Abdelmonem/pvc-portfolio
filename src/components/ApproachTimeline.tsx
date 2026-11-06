@@ -49,9 +49,9 @@ export const ApproachTimeline: React.FC = () => {
                 transition={{ duration: 0.5, delay: idx * 0.15 }}
                 className="group"
               >
-                {/* Node Indicator: Clean White with Navy & Primary Blue Hover */}
-                <div className="w-20 h-20 rounded-sm bg-white border-2 border-brand-light-border group-hover:border-brand-primary flex flex-col items-center justify-center transition-all duration-300 shadow-sm mb-7 group-hover:-translate-y-1">
-                  <span className="font-mono text-xs font-bold text-brand-navy">{step.number}</span>
+                {/* Node Indicator: Clean White with Circular Fluid Hover */}
+                <div className="w-16 h-16 rounded-full bg-white border-2 border-brand-light-border/80 group-hover:border-brand-primary flex flex-col items-center justify-center transition-all duration-300 shadow-sm mb-7 group-hover:-translate-y-1">
+                  <span className="font-mono text-[11px] font-bold text-brand-navy">{step.number}</span>
                   {stepIcons[idx]}
                 </div>
 
@@ -95,12 +95,12 @@ export const ApproachTimeline: React.FC = () => {
                 className="flex items-start gap-4 sm:gap-6"
               >
                 {/* Vertical Node */}
-                <div className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-sm bg-white border-2 border-brand-primary flex items-center justify-center shadow-sm relative z-10">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-full bg-white border-2 border-brand-primary flex items-center justify-center shadow-sm relative z-10">
                   <span className="font-mono text-xs font-extrabold text-brand-navy">{step.number}</span>
                 </div>
 
-                {/* Step Details: Clean White Card */}
-                <div className="p-5 rounded-sm bg-white border border-brand-light-border flex-1 shadow-xs">
+                {/* Step Details: Clean Fluid Card */}
+                <div className="p-5 sm:p-6 rounded-2xl bg-white border border-brand-light-border/80 flex-1 shadow-xs">
                   <div className="flex items-center justify-between mb-1">
                     <h3 className="font-heading text-lg font-bold text-brand-slate">{step.title}</h3>
                     <span className="text-[10px] font-mono text-brand-muted tracking-wider uppercase font-semibold">

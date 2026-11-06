@@ -6,13 +6,15 @@ import {
   Maximize2,
   X,
   CheckCircle2,
-  Eye
+  Eye,
+  ArrowUpRight,
+  Sparkles
 } from 'lucide-react';
 
 export const SmartSystemExplainer: React.FC = () => {
   const { isRTL, language } = useLanguage();
   const [activeTab, setActiveTab] = useState<number>(0);
-  const [lightboxImage, setLightboxImage] = useState<{ url: string; title: string } | null>(null);
+  const [lightboxImage, setLightboxImage] = useState<{ url: string; title: string; subtitle: string } | null>(null);
 
   const systemModules = [
     {
@@ -104,44 +106,61 @@ export const SmartSystemExplainer: React.FC = () => {
   const currentModule = systemModules[activeTab];
 
   return (
-    <section id="system-architecture" className="py-24 md:py-36 bg-brand-navy text-white relative overflow-hidden border-b border-brand-navy-dark">
-      {/* Decorative Subtle Blue Glow */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-sky/10 rounded-full blur-3xl pointer-events-none" />
+    <section id="system-architecture" className="py-20 md:py-32 bg-brand-navy text-white relative overflow-hidden">
+      {/* Decorative Subtle Blue Ambient Glow */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-sky/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-primary/15 rounded-full blur-3xl pointer-events-none" />
 
       {/* Lightbox Modal for Diagram Zoom */}
       <AnimatePresence>
         {lightboxImage && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-8 bg-slate-950/90 backdrop-blur-md">
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setLightboxImage(null)}
-              className="fixed inset-0 bg-brand-navy-dark/95 backdrop-blur-md cursor-pointer"
-            />
-            <motion.div
-              initial={{ opacity: 0, scale: 0.94 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.94 }}
-              className="relative max-w-5xl w-full bg-white rounded-sm shadow-2xl overflow-hidden border border-brand-light-border z-10 text-brand-slate"
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.25 }}
+              className="relative max-w-5xl w-full bg-slate-900 border border-white/20 rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[92vh] text-white"
             >
-              <div className="flex items-center justify-between px-5 py-4 bg-brand-light border-b border-brand-light-border">
-                <span className="font-heading font-bold text-sm sm:text-base text-brand-slate">
-                  {lightboxImage.title}
-                </span>
+              {/* Modal Top Bar */}
+              <div className="flex items-center justify-between p-4 sm:p-5 border-b border-white/10 bg-slate-950/70">
+                <div>
+                  <h3 className="font-heading font-bold text-sm sm:text-base text-white">
+                    {lightboxImage.title}
+                  </h3>
+                  <p className="text-xs text-brand-sky-pale line-clamp-1">
+                    {lightboxImage.subtitle}
+                  </p>
+                </div>
                 <button
                   onClick={() => setLightboxImage(null)}
-                  className="p-1.5 rounded-full hover:bg-brand-light-border text-brand-muted hover:text-brand-slate transition-colors"
+                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors focus:outline-none"
+                  aria-label="Close modal"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
-              <div className="p-4 sm:p-6 bg-brand-light/30 flex items-center justify-center max-h-[80vh] overflow-auto">
+
+              {/* Modal Image */}
+              <div className="p-3 sm:p-6 overflow-auto flex-1 flex items-center justify-center bg-slate-950">
                 <img
                   src={lightboxImage.url}
                   alt={lightboxImage.title}
-                  className="w-full h-auto max-h-[75vh] object-contain rounded-sm shadow-md bg-white p-2"
+                  className="max-h-[68vh] w-auto max-w-full object-contain rounded-2xl bg-white p-2"
                 />
+              </div>
+
+              {/* Modal Bottom Bar */}
+              <div className="p-4 sm:p-5 border-t border-white/10 bg-slate-900/90 flex items-center justify-between">
+                <span className="font-mono text-xs text-brand-sky font-bold">
+                  PVC SMART SERVICES · SCHEMATIC VERIFIED
+                </span>
+                <button
+                  onClick={() => setLightboxImage(null)}
+                  className="px-5 py-2 rounded-full bg-brand-primary hover:bg-brand-navy-dark text-white text-xs font-bold transition-all shadow-md"
+                >
+                  {language === 'ar' ? 'إغلاق المعاينة' : 'Close Preview'}
+                </button>
               </div>
             </motion.div>
           </div>
@@ -169,33 +188,35 @@ export const SmartSystemExplainer: React.FC = () => {
           dark={true}
         />
 
-        {/* 3 Interactive Tab Selectors */}
-        <div className="flex overflow-x-auto no-scrollbar sm:flex-wrap items-center gap-2 sm:gap-3.5 pb-4 sm:pb-6 border-b border-white/15 mt-8">
-          {systemModules.map((item, idx) => {
-            const isActive = activeTab === idx;
-            return (
-              <button
-                key={item.id}
-                onClick={() => setActiveTab(idx)}
-                className={`flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-6 py-2.5 sm:py-3.5 rounded-sm text-xs sm:text-sm font-bold tracking-wide transition-all focus:outline-none shrink-0 ${
-                  isActive
-                    ? 'bg-brand-primary text-white shadow-lg'
-                    : 'bg-brand-navy-dark/80 hover:bg-brand-navy-light text-brand-sky-pale border border-white/10 hover:border-brand-sky/40'
-                }`}
-              >
-                <span className={`font-mono text-xs px-1.5 py-0.5 rounded-xs ${
-                  isActive ? 'bg-brand-sky text-brand-navy-dark font-extrabold' : 'bg-brand-navy text-brand-sky'
-                }`}>
-                  {item.tabNumber}
-                </span>
-                <span>{item.tabLabel}</span>
-              </button>
-            );
-          })}
+        {/* 3 Interactive Tab Selectors: Fluid Pill Bar */}
+        <div className="w-full overflow-x-auto no-scrollbar flex sm:justify-center mt-8 pb-1">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 p-1.5 rounded-full bg-brand-navy-dark/90 border border-white/15 backdrop-blur-md shadow-xl shrink-0 mx-auto sm:mx-0">
+            {systemModules.map((item, idx) => {
+              const isActive = activeTab === idx;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => setActiveTab(idx)}
+                  className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all focus:outline-none shrink-0 ${
+                    isActive
+                      ? 'bg-brand-primary text-white shadow-md'
+                      : 'text-brand-sky-pale hover:text-white hover:bg-white/10'
+                  }`}
+                >
+                  <span className={`font-mono text-xs px-2 py-0.5 rounded-full ${
+                    isActive ? 'bg-brand-sky text-brand-navy-dark font-extrabold' : 'bg-white/10 text-brand-sky'
+                  }`}>
+                    {item.tabNumber}
+                  </span>
+                  <span>{item.tabLabel}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Active Module Showcase */}
-        <div className="mt-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div className="mt-10 sm:mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Visual Diagram Frame (7 cols) */}
           <div className="lg:col-span-7 relative">
             <motion.div
@@ -203,33 +224,37 @@ export const SmartSystemExplainer: React.FC = () => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="relative rounded-sm overflow-hidden bg-brand-navy-dark/90 border border-brand-sky/25 shadow-2xl group p-3 sm:p-5"
+              className="relative rounded-3xl overflow-hidden bg-brand-navy-dark/80 border border-white/20 shadow-2xl p-3 sm:p-5 backdrop-blur-xl"
             >
-              <div className="relative overflow-hidden rounded-xs bg-white p-2">
+              <div className="relative overflow-hidden rounded-2xl bg-white p-3 shadow-inner">
                 <img
                   src={currentModule.image}
                   alt={currentModule.alt}
-                  className="w-full h-auto object-contain max-h-[460px] p-2 bg-white hover:scale-101 transition-transform duration-500"
+                  className="w-full h-auto object-contain max-h-[480px] p-2 bg-white hover:scale-101 transition-transform duration-500"
                 />
 
-                {/* Click-to-Enlarge Overlay */}
+                {/* Click-to-Enlarge Pill Button */}
                 <button
                   onClick={() =>
-                    setLightboxImage({ url: currentModule.image, title: currentModule.title })
+                    setLightboxImage({
+                      url: currentModule.image,
+                      title: currentModule.title,
+                      subtitle: currentModule.subtitle
+                    })
                   }
-                  className="absolute bottom-4 right-4 inline-flex items-center gap-2 px-3.5 py-2 rounded-sm bg-brand-navy-dark hover:bg-brand-primary text-white text-xs font-bold shadow-lg backdrop-blur-sm transition-colors"
+                  className="absolute bottom-4 right-4 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-navy-dark/90 hover:bg-brand-primary text-white text-xs font-bold shadow-lg backdrop-blur-sm border border-white/20 transition-all hover:scale-105"
                 >
                   <Maximize2 className="w-3.5 h-3.5 text-brand-sky" />
-                  <span>{language === 'ar' ? 'تكبير المخطط للتفاصيل' : 'Enlarge Diagram'}</span>
+                  <span>{language === 'ar' ? 'تكبير المخطط للتفاصيل ↗' : 'Enlarge Diagram ↗'}</span>
                 </button>
 
-                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-brand-primary text-white text-[10px] font-mono font-bold tracking-wider uppercase shadow-xs">
+                <div className="absolute top-4 left-4 px-3.5 py-1 rounded-full bg-brand-primary text-white text-[10px] font-mono font-bold tracking-wider uppercase shadow-xs">
                   {currentModule.badge}
                 </div>
               </div>
 
               {/* Caption banner below diagram */}
-              <div className="mt-3 flex items-center justify-between text-xs text-brand-sky-pale pt-2 border-t border-white/10">
+              <div className="mt-3 flex items-center justify-between text-xs text-brand-sky-pale pt-2 border-t border-white/10 px-1">
                 <span className="flex items-center gap-1.5 font-medium">
                   <Eye className="w-3.5 h-3.5 text-brand-sky" />
                   {language === 'ar' ? 'رسم تخطيطي تفصيلي معتمد ميدانيًا' : 'Field-Verified Engineering Schematic'}
@@ -242,9 +267,10 @@ export const SmartSystemExplainer: React.FC = () => {
           {/* Module Explanations & Specs (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
             <div>
-              <span className="font-mono text-xs font-bold text-brand-sky tracking-wider uppercase block mb-1">
-                SYSTEM SCHEMATIC
-              </span>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-sky/20 border border-brand-sky/40 text-brand-sky text-xs font-bold mb-2">
+                <Sparkles className="w-3 h-3 text-brand-sky" />
+                <span>SYSTEM SCHEMATIC</span>
+              </div>
               <h3 className="font-heading text-2xl sm:text-3xl font-extrabold text-white leading-tight">
                 {currentModule.title}
               </h3>
@@ -254,17 +280,17 @@ export const SmartSystemExplainer: React.FC = () => {
             </div>
 
             {/* 4 Feature Highlights */}
-            <div className="space-y-3.5 pt-3 border-t border-white/15">
+            <div className="space-y-3 pt-3 border-t border-white/15">
               {currentModule.highlights.map((point, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: isRTL ? 10 : -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.08 }}
-                  className="flex items-start gap-3 p-3.5 bg-brand-navy-dark/60 border border-white/10 rounded-sm hover:border-brand-sky/40 transition-colors shadow-2xs text-white"
+                  className="flex items-start gap-3 p-3.5 bg-brand-navy-dark/60 border border-white/10 rounded-2xl hover:border-brand-sky/40 transition-colors shadow-2xs text-white"
                 >
-                  <div className="w-6 h-6 rounded-full bg-brand-primary/20 text-brand-sky flex items-center justify-center shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4 text-brand-sky" />
+                  <div className="w-6 h-6 rounded-full bg-brand-primary/30 text-brand-sky flex items-center justify-center shrink-0 mt-0.5 border border-brand-sky/30">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-brand-sky" />
                   </div>
                   <div>
                     <h4 className="font-heading font-bold text-xs sm:text-sm text-white mb-0.5">
@@ -278,13 +304,13 @@ export const SmartSystemExplainer: React.FC = () => {
               ))}
             </div>
 
-            <div className="pt-2 flex items-center gap-4">
+            <div className="pt-2">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-5 py-3 bg-brand-primary hover:bg-brand-primary-dark text-white rounded-sm text-xs font-bold uppercase tracking-wider transition-all shadow-md hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2.5 px-8 py-3.5 sm:py-4 bg-brand-primary hover:bg-brand-sky text-white hover:text-brand-navy-dark rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider transition-all shadow-xl hover:-translate-y-0.5"
               >
-                <span>{language === 'ar' ? 'طلب دراسة تشغيلية لموقعك' : 'Request a Venue Operations Study'}</span>
-                <span className={isRTL ? 'rotate-180' : ''}>↗</span>
+                <span>{language === 'ar' ? 'طلب دراسة تشغيلية لموقعك' : 'Request Venue Operations Study'}</span>
+                <ArrowUpRight className={`w-4 h-4 ${isRTL ? 'rotate-180' : ''}`} />
               </a>
             </div>
           </div>

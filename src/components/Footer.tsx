@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
               {t.footer.summary}
             </p>
             <div className="pt-2">
-              <span className="inline-block text-[10px] font-mono tracking-wider uppercase px-2.5 py-1 bg-brand-navy-dark rounded-sm text-brand-sky border border-brand-sky/30 font-bold">
+              <span className="inline-block text-[10px] font-mono tracking-wider uppercase px-3 py-1 bg-brand-navy-dark rounded-full text-brand-sky border border-brand-sky/30 font-bold">
                 OPERATIONAL EXCELLENCE · EGYPT
               </span>
             </div>
@@ -209,7 +209,7 @@ export const Footer: React.FC = () => {
 
           <button
             onClick={handleScrollToTop}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-sm bg-brand-navy-dark hover:bg-brand-primary text-brand-sky hover:text-white border border-brand-sky/30 text-xs font-semibold tracking-wider transition-colors focus:outline-none shadow-xs"
+            className="flex items-center gap-2 px-4 py-2 rounded-full bg-brand-navy-dark hover:bg-brand-primary text-brand-sky hover:text-white border border-brand-sky/30 text-xs font-semibold tracking-wider transition-colors focus:outline-none shadow-sm"
           >
             <span>{t.footer.backToTop}</span>
             <ArrowUp className="w-3.5 h-3.5" />

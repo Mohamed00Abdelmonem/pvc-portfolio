@@ -90,7 +90,7 @@ export const ContactSection: React.FC = () => {
                 href="https://wa.me/201278761141"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-5 sm:p-6 bg-white border border-brand-light-border rounded-sm hover:border-brand-primary transition-all duration-300 flex items-center justify-between shadow-xs hover:shadow-md"
+                className="group p-5 sm:p-6 bg-white border border-brand-light-border/80 rounded-2xl hover:border-brand-primary transition-all duration-300 flex items-center justify-between shadow-xs hover:shadow-md hover:-translate-y-0.5"
               >
                 <div className="flex items-center gap-4">
                   <div className="w-11 h-11 rounded-full bg-brand-light flex items-center justify-center text-brand-primary group-hover:scale-105 transition-transform shadow-2xs">
@@ -111,7 +111,7 @@ export const ContactSection: React.FC = () => {
               {/* Email */}
               <a
                 href="mailto:info@PVCsmartservice.com"
-                className="group p-5 sm:p-6 bg-white border border-brand-light-border rounded-sm hover:border-brand-primary transition-all duration-300 flex items-center justify-between shadow-xs hover:shadow-md"
+                className="group p-5 sm:p-6 bg-white border border-brand-light-border/80 rounded-2xl hover:border-brand-primary transition-all duration-300 flex items-center justify-between shadow-xs hover:shadow-md hover:-translate-y-0.5"
               >
                 <div className="flex items-center gap-4">
                   <div className="w-11 h-11 rounded-full bg-brand-light flex items-center justify-center text-brand-primary group-hover:scale-105 transition-transform shadow-2xs">
@@ -134,7 +134,7 @@ export const ContactSection: React.FC = () => {
                 href="https://PVCsmartservice.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-5 sm:p-6 bg-white border border-brand-light-border rounded-sm hover:border-brand-primary transition-all duration-300 flex items-center justify-between shadow-xs hover:shadow-md"
+                className="group p-5 sm:p-6 bg-white border border-brand-light-border/80 rounded-2xl hover:border-brand-primary transition-all duration-300 flex items-center justify-between shadow-xs hover:shadow-md hover:-translate-y-0.5"
               >
                 <div className="flex items-center gap-4">
                   <div className="w-11 h-11 rounded-full bg-brand-light flex items-center justify-center text-brand-primary group-hover:scale-105 transition-transform shadow-2xs">
@@ -154,7 +154,7 @@ export const ContactSection: React.FC = () => {
             </div>
 
             {/* Operational Commitment Note */}
-            <div className="p-5 sm:p-6 bg-white border border-brand-light-border rounded-sm shadow-xs">
+            <div className="p-5 sm:p-6 bg-white border border-brand-light-border/80 rounded-2xl shadow-xs">
               <span className="text-[10px] font-mono tracking-wider text-brand-primary font-bold uppercase block mb-1">
                 OPERATIONAL ENGAGEMENT
               </span>
@@ -167,7 +167,7 @@ export const ContactSection: React.FC = () => {
           </div>
 
           {/* Proposal Request / Contact Form (7 cols) */}
-          <div className="lg:col-span-7 bg-white p-7 sm:p-10 rounded-sm border border-brand-light-border shadow-md">
+          <div className="lg:col-span-7 bg-white p-7 sm:p-10 rounded-3xl border border-brand-light-border/80 shadow-md">
             <h3 className="font-heading text-xl sm:text-2xl font-bold text-brand-slate mb-2">
               {t.contact.form.heading}
             </h3>
@@ -184,7 +184,7 @@ export const ContactSection: React.FC = () => {
                 <select
                   value={formData.service}
                   onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                  className="w-full bg-brand-cool-white border border-brand-light-border focus:border-brand-primary px-4 py-3 rounded-sm text-brand-slate text-sm focus:outline-none transition-colors"
+                  className="w-full bg-brand-cool-white border border-brand-light-border focus:border-brand-primary px-4 py-3 rounded-xl text-brand-slate text-sm focus:outline-none transition-colors"
                 >
                   <option value="all">
                     {language === 'ar' ? 'شريك تشغيلي متكامل (كافة الخدمات)' : 'Comprehensive Operational Partner (All Services)'}
@@ -223,7 +223,7 @@ export const ContactSection: React.FC = () => {
                     placeholder={t.contact.form.namePlaceholder}
                     className={`w-full bg-brand-cool-white border ${
                       errors.name ? 'border-red-400' : 'border-brand-light-border'
-                    } focus:border-brand-primary px-4 py-3 rounded-sm text-brand-slate text-sm focus:outline-none transition-colors`}
+                    } focus:border-brand-primary px-4 py-3 rounded-xl text-brand-slate text-sm focus:outline-none transition-colors`}
                   />
                   {errors.name && (
                     <div className="flex items-center gap-1 text-red-500 text-xs mt-1">
@@ -247,7 +247,7 @@ export const ContactSection: React.FC = () => {
                     placeholder={t.contact.form.emailPlaceholder}
                     className={`w-full bg-brand-cool-white border ${
                       errors.email ? 'border-red-400' : 'border-brand-light-border'
-                    } focus:border-brand-primary px-4 py-3 rounded-sm text-brand-slate text-sm focus:outline-none transition-colors`}
+                    } focus:border-brand-primary px-4 py-3 rounded-xl text-brand-slate text-sm focus:outline-none transition-colors`}
                   />
                   {errors.email && (
                     <div className="flex items-center gap-1 text-red-500 text-xs mt-1">
@@ -268,7 +268,7 @@ export const ContactSection: React.FC = () => {
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   placeholder={t.contact.form.phonePlaceholder}
-                  className="w-full bg-brand-cool-white border border-brand-light-border focus:border-brand-primary px-4 py-3 rounded-sm text-brand-slate text-sm focus:outline-none transition-colors"
+                  className="w-full bg-brand-cool-white border border-brand-light-border focus:border-brand-primary px-4 py-3 rounded-xl text-brand-slate text-sm focus:outline-none transition-colors"
                   dir="ltr"
                 />
               </div>
@@ -288,7 +288,7 @@ export const ContactSection: React.FC = () => {
                   placeholder={t.contact.form.messagePlaceholder}
                   className={`w-full bg-brand-cool-white border ${
                     errors.message ? 'border-red-400' : 'border-brand-light-border'
-                  } focus:border-brand-primary px-4 py-3 rounded-sm text-brand-slate text-sm focus:outline-none transition-colors resize-y`}
+                  } focus:border-brand-primary px-4 py-3 rounded-xl text-brand-slate text-sm focus:outline-none transition-colors resize-y`}
                 />
                 {errors.message && (
                   <div className="flex items-center gap-1 text-red-500 text-xs mt-1">
@@ -298,11 +298,11 @@ export const ContactSection: React.FC = () => {
                 )}
               </div>
 
-              {/* Submit CTA: Primary Blue */}
+              {/* Submit CTA: Fluid Pill Button */}
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-3 py-4 bg-brand-primary hover:bg-brand-navy text-white text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 rounded-sm shadow-md hover:shadow-lg active:scale-[0.99]"
+                  className="w-full flex items-center justify-center gap-3 py-4 bg-brand-primary hover:bg-brand-navy-dark text-white text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 rounded-full shadow-xl hover:shadow-brand-primary/40 active:scale-[0.99]"
                 >
                   <Send className="w-4 h-4" />
                   <span>{t.contact.form.submitBtn}</span>
@@ -310,7 +310,7 @@ export const ContactSection: React.FC = () => {
               </div>
 
               {isSubmitted && (
-                <div className="p-3 bg-brand-light border border-brand-primary text-brand-primary text-xs rounded-sm flex items-center gap-2">
+                <div className="p-3.5 bg-brand-light border border-brand-primary text-brand-primary text-xs rounded-xl flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-brand-primary shrink-0" />
                   <span>
                     {language === 'ar'

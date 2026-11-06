@@ -52,7 +52,7 @@ export const AboutSection: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className={`relative p-6 sm:p-7 bg-white rounded-sm shadow-xs ${
+              className={`relative p-6 sm:p-7 bg-white rounded-2xl shadow-sm ${
                 isRTL ? 'border-r-4 border-brand-primary' : 'border-l-4 border-brand-primary'
               }`}
             >
@@ -76,9 +76,9 @@ export const AboutSection: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 * index }}
-                  className="p-5 bg-white border border-brand-light-border rounded-sm hover:border-brand-primary transition-colors shadow-xs"
+                  className="p-5 bg-white border border-brand-light-border/80 rounded-2xl hover:border-brand-primary transition-all duration-300 shadow-xs hover:-translate-y-0.5"
                 >
-                  <div className="w-9 h-9 rounded-full bg-brand-navy text-brand-sky flex items-center justify-center mb-3">
+                  <div className="w-10 h-10 rounded-full bg-brand-navy text-brand-sky flex items-center justify-center mb-3">
                     {index === 0 && <Users className="w-4 h-4" />}
                     {index === 1 && <ShieldAlert className="w-4 h-4" />}
                     {index === 2 && <Award className="w-4 h-4" />}
@@ -100,7 +100,7 @@ export const AboutSection: React.FC = () => {
               className="relative"
             >
               {/* Primary Image Frame: Natural Photography */}
-              <div className="relative overflow-hidden rounded-sm shadow-xl border-4 border-white aspect-[4/5] bg-brand-light">
+              <div className="relative overflow-hidden rounded-3xl shadow-xl border-4 border-white aspect-[4/5] bg-brand-light">
                 <img
                   src="/images/hero/valet-main.jpg"
                   alt={language === 'ar' ? 'فريق العمل الميداني خلال الإشراف والتنظيم' : 'Field team supervision and briefing'}
@@ -127,7 +127,7 @@ export const AboutSection: React.FC = () => {
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className={`mt-4 sm:mt-0 sm:absolute sm:-bottom-6 ${
                   isRTL ? 'sm:-left-6' : 'sm:-right-6'
-                } bg-brand-navy text-white p-4 sm:p-5 rounded-sm shadow-xl sm:shadow-2xl sm:max-w-xs border border-brand-sky/30`}
+                } bg-brand-navy text-white p-4 sm:p-5 rounded-2xl shadow-xl sm:shadow-2xl sm:max-w-xs border border-brand-sky/30`}
               >
                 <div className="flex items-center gap-2 mb-1.5 text-brand-sky">
                   <CheckCircle2 className="w-4 h-4" />

@@ -156,18 +156,18 @@ export const Navbar: React.FC = () => {
                 <span>{language === 'ar' ? 'EN' : 'عربي'}</span>
               </button>
 
-              {/* Proposal CTA Button: Primary Blue */}
+              {/* Proposal CTA Button: Primary Blue Fluid Pill */}
               <button
                 onClick={() => handleNavClick('contact')}
-                className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-brand-primary hover:bg-brand-primary-dark text-white text-xs font-bold tracking-wider uppercase transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 focus:outline-none active:translate-y-0 rounded-sm"
+                className="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 bg-brand-primary hover:bg-brand-primary-dark text-white text-xs font-bold tracking-wider uppercase transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 focus:outline-none active:translate-y-0 rounded-full"
               >
                 <span>{t.nav.cta}</span>
               </button>
 
-              {/* Mobile Menu Button */}
+              {/* Mobile Menu Button: Fluid Rounded */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 text-white hover:text-brand-sky focus:outline-none rounded-sm border border-white/20 bg-brand-navy-dark/60"
+                className="lg:hidden p-2.5 text-white hover:text-brand-sky focus:outline-none rounded-full border border-white/20 bg-brand-navy-dark/60 transition-colors"
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -221,7 +221,7 @@ export const Navbar: React.FC = () => {
                   <div className="pt-4 mt-2 border-t border-white/10 flex flex-col gap-3">
                     <button
                       onClick={() => handleNavClick('contact')}
-                      className="w-full flex items-center justify-center gap-2 py-3 bg-brand-primary text-white text-xs font-bold tracking-widest uppercase rounded-sm shadow-md hover:bg-brand-primary-dark"
+                      className="w-full flex items-center justify-center gap-2 py-3.5 bg-brand-primary text-white text-xs font-bold tracking-widest uppercase rounded-full shadow-md hover:bg-brand-primary-dark transition-colors"
                     >
                       <span>{t.nav.cta}</span>
                     </button>
