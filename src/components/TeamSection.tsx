@@ -53,7 +53,7 @@ export const TeamSection: React.FC = () => {
         en: 'Head of Operations'
       },
       mobile: '01278761141',
-      email: 'alaa.ali@PVCsmartservice.com',
+      email: 'alaa.ali@pvcsmartservices.com',
       location: {
         ar: 'القاهرة والإسكندرية · جمهورية مصر العربية',
         en: 'Cairo & Alexandria · Egypt'
@@ -192,7 +192,7 @@ export const TeamSection: React.FC = () => {
 
               {/* Scrollable Content Body */}
               <div className="p-5 sm:p-8 overflow-y-auto space-y-6">
-                
+
                 {/* Hero Profile Overview Card */}
                 <div className="p-6 bg-gradient-to-br from-brand-cool-white to-brand-light/40 rounded-2xl border border-brand-light-border/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
                   <div className="space-y-2">

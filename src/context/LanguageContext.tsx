@@ -136,6 +136,7 @@ interface TranslationContent {
       phone: { label: string; value: string; display: string };
       email: { label: string; value: string };
       website: { label: string; value: string };
+      address?: { label: string; value: string };
     };
     form: {
       heading: string;
@@ -163,6 +164,7 @@ interface TranslationContent {
     quickLinks: string;
     servicesTitle: string;
     directContact: string;
+    address?: string;
     rights: string;
     backToTop: string;
   };
@@ -443,9 +445,10 @@ const contentData: Record<Language, TranslationContent> = {
       titlePart2: 'نسمع منك.',
       lead: 'سواء كنت تبحث عن خدمة محددة أو شريك تشغيل متكامل، فريق PVC SMART SERVICES جاهز لمناقشة احتياجاتك وتصميم المقترح التشغيلي الأنسب.',
       cards: {
-        phone: { label: 'الهاتف / واتساب', value: '+201278761141', display: '+20 127 876 1141' },
-        email: { label: 'البريد الإلكتروني', value: 'info@PVCsmartservice.com' },
-        website: { label: 'الموقع الإلكتروني', value: 'PVCsmartservice.com' }
+        phone: { label: 'الهاتف / واتساب', value: '+201020485598', display: '+20 102 048 5598' },
+        email: { label: 'البريد الإلكتروني', value: 'info@pvcsmartservices.com' },
+        website: { label: 'الموقع الإلكتروني', value: 'pvcsmartservices.com' },
+        address: { label: 'المقر الرئيسي والعنوان', value: 'مكتب ( 02 ) بالوحدة رقم ( 201 ) بالطابق الثاني – العقار 38 حي الملتقى العربي – شيراتون المطار – النزهة - القاهرة' }
       },
       form: {
         heading: 'طلب مقترح تشغيلي / استفسار مباشر',
@@ -473,6 +476,7 @@ const contentData: Record<Language, TranslationContent> = {
       quickLinks: 'روابط الوصول السريع',
       servicesTitle: 'الخدمات التشغيلية',
       directContact: 'التواصل المباشر',
+      address: 'مكتب ( 02 ) بالوحدة رقم ( 201 ) بالطابق الثاني – العقار 38 حي الملتقى العربي – شيراتون المطار – النزهة - القاهرة',
       rights: 'جميع الحقوق محفوظة.',
       backToTop: 'العودة للأعلى ↑'
     }
@@ -751,9 +755,10 @@ const contentData: Record<Language, TranslationContent> = {
       titlePart2: 'hear from you.',
       lead: 'Whether you require a specific service or a comprehensive operational partner, our team is ready to evaluate your venue and formulate a tailored proposal.',
       cards: {
-        phone: { label: 'Phone / WhatsApp', value: '+201278761141', display: '+20 127 876 1141' },
-        email: { label: 'Email', value: 'info@PVCsmartservice.com' },
-        website: { label: 'Website', value: 'PVCsmartservice.com' }
+        phone: { label: 'Phone / WhatsApp', value: '+201020485598', display: '+20 102 048 5598' },
+        email: { label: 'Email', value: 'info@pvcsmartservices.com' },
+        website: { label: 'Website', value: 'pvcsmartservices.com' },
+        address: { label: 'Headquarters Address', value: 'Office 02, Unit 201, 2nd Floor – Property 38, Al-Moltaka Al-Arabi, Sheraton Airport, El Nozha, Cairo' }
       },
       form: {
         heading: 'Request an Operational Proposal',
@@ -781,6 +786,7 @@ const contentData: Record<Language, TranslationContent> = {
       quickLinks: 'Navigation',
       servicesTitle: 'Operational Services',
       directContact: 'Direct Inquiries',
+      address: 'Office 02, Unit 201, 2nd Floor – Property 38, Al-Moltaka Al-Arabi, Sheraton Airport, El Nozha, Cairo',
       rights: 'All rights reserved.',
       backToTop: 'Back to Top ↑'
     }

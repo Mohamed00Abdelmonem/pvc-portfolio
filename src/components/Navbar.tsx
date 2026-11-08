@@ -57,9 +57,8 @@ export const Navbar: React.FC = () => {
     <>
       {/* Topline Banner: Deep Navy Background with Sky Blue Accent */}
       <div
-        className={`bg-brand-navy-dark text-brand-sky-pale text-[11px] md:text-xs px-4 border-b border-brand-navy-light/40 tracking-normal font-medium transition-all duration-300 ${
-          isScrolled ? 'hidden md:block md:py-1' : 'py-2'
-        }`}
+        className={`bg-brand-navy-dark text-brand-sky-pale text-[11px] md:text-xs px-4 border-b border-brand-navy-light/40 tracking-normal font-medium transition-all duration-300 ${isScrolled ? 'hidden md:block md:py-1' : 'py-2'
+          }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -70,11 +69,11 @@ export const Navbar: React.FC = () => {
             <span>{t.brand.tagline}</span>
             <span className="text-white/20">|</span>
             <a
-              href="tel:+201278761141"
+              href="tel:+201020485598"
               className="hover:text-white transition-colors font-mono tracking-normal font-semibold text-brand-sky-soft"
               dir="ltr"
             >
-              +20 127 876 1141
+              +20 102 048 5598
             </a>
           </div>
         </div>
@@ -82,11 +81,10 @@ export const Navbar: React.FC = () => {
 
       {/* Main Sticky Header: Deep Navy */}
       <header
-        className={`sticky top-0 z-50 transition-all duration-300 ${
-          isScrolled
+        className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled
             ? 'bg-brand-navy/95 backdrop-blur-md shadow-lg py-3.5 border-b border-brand-navy-dark'
             : 'bg-brand-navy text-white py-4 md:py-4.5 border-b border-white/10'
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
@@ -132,11 +130,10 @@ export const Navbar: React.FC = () => {
                   <button
                     key={link.id}
                     onClick={() => handleNavClick(link.id)}
-                    className={`relative text-xs sm:text-sm font-semibold transition-colors py-1 focus:outline-none ${
-                      isActive
+                    className={`relative text-xs sm:text-sm font-semibold transition-colors py-1 focus:outline-none ${isActive
                         ? 'text-brand-sky font-bold'
                         : 'text-white/85 hover:text-white'
-                    }`}
+                      }`}
                   >
                     {link.label}
                     {isActive && (
@@ -210,17 +207,15 @@ export const Navbar: React.FC = () => {
                       <button
                         key={link.id}
                         onClick={() => handleNavClick(link.id)}
-                        className={`flex items-center justify-between text-left py-2.5 px-3.5 rounded text-sm font-semibold transition-colors focus:outline-none ${
-                          isActive
+                        className={`flex items-center justify-between text-left py-2.5 px-3.5 rounded text-sm font-semibold transition-colors focus:outline-none ${isActive
                             ? 'bg-brand-navy text-brand-sky font-bold'
                             : 'text-white/85 hover:bg-brand-navy hover:text-white'
-                        }`}
+                          }`}
                       >
                         <span>{link.label}</span>
                         <ArrowUpRight
-                          className={`w-4 h-4 transition-transform ${isRTL ? 'rotate-180' : ''} ${
-                            isActive ? 'text-brand-sky opacity-100' : 'opacity-30'
-                          }`}
+                          className={`w-4 h-4 transition-transform ${isRTL ? 'rotate-180' : ''} ${isActive ? 'text-brand-sky opacity-100' : 'opacity-30'
+                            }`}
                         />
                       </button>
                     );
@@ -234,7 +229,7 @@ export const Navbar: React.FC = () => {
                       <span>{t.nav.cta}</span>
                     </button>
                     <p className="text-center text-[11px] text-brand-sky-soft font-mono" dir="ltr">
-                      +20 127 876 1141 · info@PVCsmartservice.com
+                      +20 102 048 5598 · info@pvcsmartservices.com
                     </p>
                   </div>
                 </div>

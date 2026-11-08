@@ -7,8 +7,8 @@ export const FloatingWhatsApp: React.FC = () => {
   const { isRTL, language } = useLanguage();
   const [showTooltip, setShowTooltip] = useState(false);
 
-  const phoneDisplay = '+20 127 876 1141';
-  const whatsappUrl = `https://wa.me/201278761141?text=${encodeURIComponent(
+  const phoneDisplay = '+20 102 048 5598';
+  const whatsappUrl = `https://wa.me/201020485598?text=${encodeURIComponent(
     language === 'ar'
       ? 'مرحبًا PVC SMART SERVICES، أود الاستفسار عن خدمات التشغيل وإدارة المواقف.'
       : 'Hello PVC SMART SERVICES, I would like to inquire about your operational and parking services.'
