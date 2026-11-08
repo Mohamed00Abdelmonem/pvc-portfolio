@@ -1,5 +1,0 @@
-const body=document.body,langBtn=document.querySelector('.lang'),menu=document.querySelector('.menu'),nav=document.querySelector('nav');let lang='ar';
-langBtn.addEventListener('click',()=>{lang=lang==='ar'?'en':'ar';body.classList.toggle('en',lang==='en');body.dir=lang==='ar'?'rtl':'ltr';document.documentElement.lang=lang;langBtn.textContent=lang==='ar'?'EN':'AR';document.querySelectorAll('[data-ar][data-en]').forEach(e=>e.innerHTML=e.dataset[lang]);});
-menu.addEventListener('click',()=>nav.classList.toggle('open'));nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
-document.getElementById('year').textContent=new Date().getFullYear();
-document.getElementById('contact-form').addEventListener('submit',e=>{e.preventDefault();const d=new FormData(e.currentTarget);const msg=lang==='ar'?`مرحبًا PVC SMART SERVICES،\nالاسم: ${d.get('name')}\nالبريد: ${d.get('email')}\nالرسالة: ${d.get('message')}`:`Hello PVC SMART SERVICES,\nName: ${d.get('name')}\nEmail: ${d.get('email')}\nMessage: ${d.get('message')}`;window.open('https://wa.me/201278761141?text='+encodeURIComponent(msg),'_blank','noopener');});
